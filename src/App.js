@@ -1,15 +1,21 @@
 import logo from './logo.svg';
+import Nav from '../src/views/Nav/Nav';
+import Header from './components/Header';
+import { Outlet } from 'react-router-dom';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello world with KiMoon 
-        </p>
-      </header>
+      <div className='app-header'>
+        <Header />
+      </div>
+      <div className='app-content'>
+        {/* App content/\ */}
+        <Outlet>
+
+        </Outlet>
+      </div>
     </div>
   );
 }
