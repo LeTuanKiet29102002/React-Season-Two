@@ -1,6 +1,7 @@
+import './User.scss'
 const User = (props)=>{
     return (
-        <div>
+        <div className="list-container-user">
             user content
         </div>
     )
