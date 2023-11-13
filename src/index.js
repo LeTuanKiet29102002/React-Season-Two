@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import User from './components/User/User';
 import Admin from './components/Admin/Admin';
 import Home from './components/Home';
+import Todo from './components/Todo/Todo';
 import { Scrollbar } from 'react-scrollbars-custom';
 
 
@@ -19,6 +20,7 @@ ReactDOM.render(
           <Route path="/" element={<App />}>
             <Route path="users" element={<User />} />
             <Route path="admins" element={<Admin />} />
+            <Route path="todo" element={<Todo />} />
             <Route index element={<Home />} />
           </Route>
         </Routes>

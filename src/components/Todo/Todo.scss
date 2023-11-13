@@ -1,0 +1,12 @@
+.todo-container{
+    
+    background: rgb(248, 102, 166);
+    background: linear-gradient(108deg, rgba(248, 102, 166, 1) 1%, rgba(60, 145, 245, 1) 100%);
+    min-height: 120vh;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+    font-size: calc(10px + 2vmin);
+    color: rgb(255, 255, 255);
+}

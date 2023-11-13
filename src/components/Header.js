@@ -19,6 +19,7 @@ const Header = () => {
                         navbarScroll
                     >
                         <NavLink className='nav-link' to="/">Home</NavLink>
+                        <NavLink className='nav-link' to="todo">Todo</NavLink>
                         <NavLink className='nav-link' to="/users">User</NavLink>
                         <NavLink className='nav-link' to="/admins">Admin</NavLink>
                         <NavDropdown title="Link" id="navbarScrollingDropdown">
