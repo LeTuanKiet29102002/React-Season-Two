@@ -50,12 +50,18 @@ const Home = (props) => {
     const handleOnchangeSearchTitle = (event) => {
         setSearchTitle(event.target.value);
     }
-    const handleSearch = (event)=>{
+    const handleSearch = (event) => {
         const filtered = todos.filter(todo => todo.title.toLowerCase().includes(searchTitle.toLowerCase()));
         setFilteredTodos(filtered);
         setSearchTitle('');
     }
-    
+
+    const deleteDataTodo = (key) => {
+        let currentTodo = todos;
+         currentTodo = currentTodo.filter(item=>item.key!==key);
+        setTodos(currentTodo)
+    }
+
 
     return (
         <div className='todo-container'>
@@ -103,15 +109,16 @@ const Home = (props) => {
             <Search
                 value={searchTitle}
                 className='mx-5 mt-3'
-                style={{width:'300px',display:'block'}}
+                style={{ width: '300px', display: 'block' }}
                 placeholder="input search text"
                 allowClear
                 enterButton="Search"
-                onSearch={(event)=>{handleSearch(event)}}
+                onSearch={(event) => { handleSearch(event) }}
                 onChange={(event) => { handleOnchangeSearchTitle(event) }}
             />
             <TodoTable
                 todos={filteredTodos.length > 0 ? filteredTodos : todos}
+                deleteDataTodo={deleteDataTodo}
             />
 
         </div>

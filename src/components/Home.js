@@ -1,10 +1,10 @@
 import { Button, Input, Tooltip, Table, Space } from 'antd';
 import { useState } from 'react';
-import { InfoCircleOutlined, UserOutlined, CompassOutlined, MoneyCollectOutlined } from '@ant-design/icons';
+import { InfoCircleOutlined, UserOutlined, CompassOutlined, MoneyCollectOutlined,DeleteOutlined } from '@ant-design/icons';
 import ColumnGroup from 'antd/es/table/ColumnGroup';
 import Column from 'antd/es/table/Column';
 import './Home.scss';
-import {toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 const Home = (props) => {
     const [id, setId] = useState('');
     const [title, setTitle] = useState('');
@@ -44,6 +44,7 @@ const Home = (props) => {
     const handleOnchangeSalary = (event) => {
         setSalary(event.target.value);
     }
+
 
     return (
         <div className='homepage-container'>
@@ -94,12 +95,17 @@ const Home = (props) => {
                 <Column
                     title="Action"
                     key="action"
-                // render={(_, record) => (
-                //     <Space size="middle">
-                //         <a>Invite</a>
-                //         <a>Delete</a>
-                //     </Space>
-                // )}
+                    render={(_, record) => (
+                        <Space size="middle">
+                            <Tooltip title="Xóa">
+                                <Button
+                                    shape="circle"
+                                    icon={<DeleteOutlined />}
+                                    // onClick={(event) => handleDeleteTodo(record.key)}
+                                />
+                            </Tooltip>
+                        </Space>
+                    )}
                 />
             </Table>
         </div>
