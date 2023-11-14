@@ -1,5 +1,5 @@
 import { Button, Input, Tooltip, Table, Space } from 'antd';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { InfoCircleOutlined, UserOutlined, CompassOutlined, MoneyCollectOutlined } from '@ant-design/icons';
 import Column from 'antd/es/table/Column';
 import './Todo.scss';
@@ -17,6 +17,18 @@ const Home = (props) => {
         { key: 'todo2', id: 'todo2', title: 'Playing game with Kimoon ', salary: '300' },
         { key: 'todo3', id: 'todo3', title: 'Fix bug with Kimoon ', salary: '500' },
     ]);
+    //Didmount
+    useEffect(()=>{
+        console.log('run use effect');
+    });
+    //Didupdate
+    useEffect(()=>{
+        console.log('run use effect');
+    },[todos.key])
+    //Unmount
+    useEffect(()=>{
+        console.log('unmount use effect');
+    },[])
 
 
     const handdleEvenClick = () => {
