@@ -9,6 +9,9 @@ const Home = (props) => {
     const [id, setId] = useState('');
     const [title, setTitle] = useState('');
     const [salary, setSalary] = useState('');
+    const [searchTitle, setSearchTitle] = useState('');
+    const [filteredTodos, setFilteredTodos] = useState([]);
+    const { Search } = Input;
     const [todos, setTodos] = useState([
         { key: 'todo1', id: 'todo1', title: 'Watching Kimoon ', salary: '200' },
         { key: 'todo2', id: 'todo2', title: 'Playing game with Kimoon ', salary: '300' },
@@ -44,10 +47,19 @@ const Home = (props) => {
     const handleOnchangeSalary = (event) => {
         setSalary(event.target.value);
     }
+    const handleOnchangeSearchTitle = (event) => {
+        setSearchTitle(event.target.value);
+    }
+    const handleSearch = (event)=>{
+        const filtered = todos.filter(todo => todo.title.toLowerCase().includes(searchTitle.toLowerCase()));
+        setFilteredTodos(filtered);
+        setSearchTitle('');
+    }
+    
 
     return (
         <div className='todo-container'>
-            <div style={{color:'#06f7ff'}}>Hello everyone!Wellcome to My TODO</div>
+            <div style={{ color: '#06f7ff' }}>Hello everyone!Wellcome to My TODO</div>
             <Input
                 value={id}
                 onChange={(event) => { handleOnchangeID(event) }}
@@ -87,10 +99,21 @@ const Home = (props) => {
                     </Tooltip>
                 }
             />
-            <Button type="default" onClick={(event) => { handdleEvenClick(event) }}>Click me</Button>
-            <TodoTable
-                todos={todos}
+            <Button type="default" onClick={(event) => { handdleEvenClick(event) }}>Add todo</Button>
+            <Search
+                value={searchTitle}
+                className='mx-5 mt-3'
+                style={{width:'300px',display:'block'}}
+                placeholder="input search text"
+                allowClear
+                enterButton="Search"
+                onSearch={(event)=>{handleSearch(event)}}
+                onChange={(event) => { handleOnchangeSearchTitle(event) }}
             />
+            <TodoTable
+                todos={filteredTodos.length > 0 ? filteredTodos : todos}
+            />
+
         </div>
     )
 }
