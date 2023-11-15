@@ -1,6 +1,7 @@
+import './Admin.scss'
 const Admin = (props)=>{
     return (
-        <div>
+        <div className="admin-container">
             Admin content
         </div>
     )

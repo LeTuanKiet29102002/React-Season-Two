@@ -19,7 +19,7 @@ const useFetch =(url)=>{
         fetchData().catch(error => {
             console.log('check error outside try-catch:', error.message);
         });
-    }, []);
+    }, [url]);
 
     return {
         data,isLoading

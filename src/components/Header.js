@@ -22,14 +22,16 @@ const Header = () => {
                         <NavLink className='nav-link' to="todo">Todo</NavLink>
                         <NavLink className='nav-link' to="/users">User</NavLink>
                         <NavLink className='nav-link' to="/admins">Admin</NavLink>
-                        <NavDropdown title="Link" id="navbarScrollingDropdown">
-                            <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action4">
-                                Another action
+                        <NavDropdown title="CountDown" id="navbarScrollingDropdown">
+                            <NavDropdown.Item>
+                                <NavLink className='nav-link' to="/countdownclass">CowntDown Class</NavLink>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item>
+                                <NavLink className='nav-link' to="/countdownhook">CowntDown Hook</NavLink>
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action5">
-                                Something else here
+                                tesst
                             </NavDropdown.Item>
                         </NavDropdown>
                         <NavLink to="#" className='nav-link' disabled>

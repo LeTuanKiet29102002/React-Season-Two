@@ -10,6 +10,8 @@ import Admin from './components/Admin/Admin';
 import Home from './components/Home';
 import Todo from './components/Todo/Todo';
 import { Scrollbar } from 'react-scrollbars-custom';
+import CountDownClass from './Countdown/CountDownClass';
+import CountDownHook from './Countdown/CountDownHook';
 
 
 ReactDOM.render(
@@ -21,6 +23,8 @@ ReactDOM.render(
             <Route path="users" element={<User />} />
             <Route path="admins" element={<Admin />} />
             <Route path="todo" element={<Todo />} />
+            <Route path="countdownclass" element={<CountDownClass />} />
+            <Route path="countdownhook" element={<CountDownHook />} />
             <Route index element={<Home />} />
           </Route>
         </Routes>
