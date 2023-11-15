@@ -4,23 +4,16 @@ import Column from 'antd/es/table/Column';
 import { InfoCircleOutlined, UserOutlined, CompassOutlined, MoneyCollectOutlined, DeleteOutlined, LoadingOutlined } from '@ant-design/icons';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import useFetch from '../../customize/fetch';
 
 
 
-const User = (props) => {
-    const [dataUser, setDataUser] = useState([]);
-    const [loading, setLoading] = useState(true);
-    useEffect(() => {
-        setTimeout(async () => {
-            let fetchData = async () => {
-                let res = await axios.get('https://reqres.in/api/users?page=2');
-                let data = res && res.data && res.data.data ? res.data.data : [];
-                setDataUser(data.reverse());
-                setLoading(false)
-            }
-            fetchData();
-        }, 2000)
-    }, []);
+const User = (props ) => {
+    
+    
+    // let dataUser = useFetch(url).data;
+    const{data:dataUser, isLoading:loading}=useFetch('https://reqres.in/api/users?page=2')
+
     return (
         <div className="list-container-user">
             <div className='' style={{ color: '#06f7ff' }}>List User Components</div>
