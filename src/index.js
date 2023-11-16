@@ -12,7 +12,8 @@ import Todo from './components/Todo/Todo';
 import { Scrollbar } from 'react-scrollbars-custom';
 import CountDownClass from './Countdown/CountDownClass';
 import CountDownHook from './Countdown/CountDownHook';
-
+import Particles from './Particles/Particles';
+import DetailUser from './components/User/DetailUser';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -23,8 +24,10 @@ ReactDOM.render(
             <Route path="users" element={<User />} />
             <Route path="admins" element={<Admin />} />
             <Route path="todo" element={<Todo />} />
+            <Route path="users/:id" element={<DetailUser />} />
             <Route path="countdownclass" element={<CountDownClass />} />
             <Route path="countdownhook" element={<CountDownHook />} />
+            <Route path="particles" element={<Particles />} />
             <Route index element={<Home />} />
           </Route>
         </Routes>

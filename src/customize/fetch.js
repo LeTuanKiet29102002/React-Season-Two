@@ -1,30 +1,39 @@
-import { useEffect ,useState} from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
-const useFetch =(url)=>{
-    const [data, setData] = useState([]);
-    const [isLoading, setLoading] = useState(true);
-    useEffect(() => {
-        let fetchData = async () => {
-            try {
-                let res = await axios.get(url);
-                let data = res && res.data && res.data.data ? res.data.data : [];
-                setData(data.reverse());
-                setLoading(false);
-            } catch (error) {
-                alert('check error:'+ error.message);
-            }
-        };
-    
-        fetchData().catch(error => {
-            console.log('check error outside try-catch:', error.message);
-        });
-    }, [url]);
+const useFetch = (url) => {
+  const [data, setData] = useState([]);
+  const [isLoading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const { id } = useParams();
 
-    return {
-        data,isLoading
-    }
-}
+  useEffect(() => {
+    let fetchData = async () => {
+      try {
+        let res = await axios.get(url);
+        let responseData = res?.data?.data || [];
+        setData(responseData);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error during data fetching:', error.message);
+        setError(error);
+        setLoading(false);
+      }
+    };
 
+    // fetchData();
+    const fetchDataWithDelay = setTimeout(fetchData, 500);
+
+        // Cleanup function để clear timeout nếu component unmounts
+        return () => clearTimeout(fetchDataWithDelay);
+  }, [url, id]); // Include 'url' and 'id' in the dependency array
+
+  return {
+    data,
+    isLoading,
+    error,
+  };
+};
 
 export default useFetch;

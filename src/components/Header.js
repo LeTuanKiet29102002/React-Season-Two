@@ -10,7 +10,9 @@ const Header = () => {
     return (
         <Navbar expand="lg" className="bg-body-tertiary" >
             <Container fluid>
-                <Navbar.Brand href="#">KIMOON</Navbar.Brand>
+                <Navbar.Brand >
+                    <NavLink className='nav-link' to="/">KIMOON</NavLink>
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
@@ -30,8 +32,8 @@ const Header = () => {
                                 <NavLink className='nav-link' to="/countdownhook">CowntDown Hook</NavLink>
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action5">
-                                tesst
+                            <NavDropdown.Item>
+                                <NavLink className='nav-link' to="/particles">Particles</NavLink>
                             </NavDropdown.Item>
                         </NavDropdown>
                         <NavLink to="#" className='nav-link' disabled>
