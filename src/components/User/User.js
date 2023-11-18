@@ -23,6 +23,9 @@ const User = (props) => {
         // console.log('check detail user:',id);
 
     }
+    const handleAddUser = ()=>{
+        navigate(`/register`)
+    }
     const handleDeleteTodo = (id) => {
         console.log('check user : ', id);
     }
@@ -35,7 +38,7 @@ const User = (props) => {
                 <Button
                     style={{ marginTop: '20px' }}
                     icon={<UserAddOutlined />}
-                    onClick={() => this.handleAddUser()}
+                    onClick={() =>handleAddUser()}
                 >Add user</Button>
             </Tooltip>
             {loading === false ?

@@ -16,7 +16,6 @@ const DetailUser = (props) => {
     }
     return (
         <div className="detailuser-container">
-            
             {loading === false ?
                 <div >
                     <div>Hello world from detail user with id: {id}</div>

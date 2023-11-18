@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './CountDownClass.scss'
 
-export default class CountDownClass extends Component {
+class CountDownClass extends Component {
     state={
         count:10
     }
@@ -34,4 +34,5 @@ export default class CountDownClass extends Component {
   }
 }
 
+export default CountDownClass
 

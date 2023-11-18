@@ -14,6 +14,7 @@ import CountDownClass from './Countdown/CountDownClass';
 import CountDownHook from './Countdown/CountDownHook';
 import Particles from './Particles/Particles';
 import DetailUser from './components/User/DetailUser';
+import Register from './components/User/Register';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -28,6 +29,7 @@ ReactDOM.render(
             <Route path="countdownclass" element={<CountDownClass />} />
             <Route path="countdownhook" element={<CountDownHook />} />
             <Route path="particles" element={<Particles />} />
+            <Route path="register" element={<Register />} />
             <Route index element={<Home />} />
           </Route>
         </Routes>
