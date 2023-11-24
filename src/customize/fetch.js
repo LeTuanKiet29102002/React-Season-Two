@@ -25,8 +25,8 @@ const useFetch = (url) => {
     // fetchData();
     const fetchDataWithDelay = setTimeout(fetchData, 500);
 
-        // Cleanup function để clear timeout nếu component unmounts
-        return () => clearTimeout(fetchDataWithDelay);
+    // Cleanup function để clear timeout nếu component unmounts
+    return () => clearTimeout(fetchDataWithDelay);
   }, [url, id]); // Include 'url' and 'id' in the dependency array
 
   return {

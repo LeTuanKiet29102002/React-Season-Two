@@ -33,7 +33,7 @@ const Header = () => {
                             </NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item>
-                                <NavLink className='nav-link' to="/particles">Particles</NavLink>
+                                <NavLink className='nav-link' to="/youtube">YouTube</NavLink>
                             </NavDropdown.Item>
                         </NavDropdown>
                         <NavLink to="#" className='nav-link' disabled>

@@ -15,21 +15,24 @@ import CountDownHook from './Countdown/CountDownHook';
 import Particles from './Particles/Particles';
 import DetailUser from './components/User/DetailUser';
 import Register from './components/User/Register';
-
+import NotFound from './components/NotFound/NotFound';
+import YouTubeSearch from './components/YouTubeSearch/YouTubeSearch';
 ReactDOM.render(
   <React.StrictMode>
     <Scrollbar style={{ height: '100vh', width: '100%' }}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />}>
+            <Route path='*' element={<NotFound />} />
             <Route path="users" element={<User />} />
             <Route path="admins" element={<Admin />} />
             <Route path="todo" element={<Todo />} />
             <Route path="users/:id" element={<DetailUser />} />
             <Route path="countdownclass" element={<CountDownClass />} />
             <Route path="countdownhook" element={<CountDownHook />} />
-            <Route path="particles" element={<Particles />} />
+            {/* <Route path="particles" element={<Particles />} /> */}
             <Route path="register" element={<Register />} />
+            <Route path="youtube" element={<YouTubeSearch />} />
             <Route index element={<Home />} />
           </Route>
         </Routes>

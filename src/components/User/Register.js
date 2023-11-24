@@ -9,6 +9,8 @@ const AddNewUser = (props) => {
     firstname: '',
     lastname: '',
   });
+
+  
   const handleCheckData = ()=>{
     console.log('>>>check data:', formData.email);
   }
